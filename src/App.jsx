@@ -8,34 +8,34 @@ import CopyButton from "./CopyButton";
 
 function App() {
   const [text, setText] = useState("");
+  const [result, setResult] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const result = "result...";
 
   const handleSubmission = useCallback(
-    (action) => {
+    async (action) => {
       setIsLoading(true);
+      let actionPrompt = "";
       switch (action) {
         case TextAction.IMPROVE:
-          console.log("Improving writing:", text);
+          actionPrompt = "Improve the following text: ";
           break;
         case TextAction.SHORTEN:
-          console.log("Making text shorter:", text);
+          actionPrompt = "Shorten the following text: ";
           break;
         case TextAction.LENGTHEN:
-          console.log("Making text longer:", text);
+          actionPrompt = "Make the following text a bit longer: ";
           break;
         case TextAction.SIMPLIFY:
-          console.log("Simplifying language:", text);
-          break;
-        case TextAction.NATURAL:
-          console.log("Making text more natural:", text);
+          actionPrompt =
+            "Rewrite the following text to sound more natural, using simpler words: ";
           break;
         default:
-          break;
+          actionPrompt = "Improve the following text: ";
       }
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
+
+      const res = await window.textTunerAPI.askOpenAI(actionPrompt + text);
+      setIsLoading(false);
+      setResult(res);
     },
     [text]
   );
@@ -53,7 +53,9 @@ function App() {
         </form>
         <ResultBox isLoading={isLoading} result={result} />
 
-        <CopyButton onClick={() => navigator.clipboard.writeText(result)} />
+        {result && (
+          <CopyButton onClick={() => navigator.clipboard.writeText(result)} />
+        )}
       </div>
     </div>
   );
