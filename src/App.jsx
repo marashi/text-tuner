@@ -42,17 +42,17 @@ function App() {
   return (
     <div className="bg-slate-900 flex flex-col min-h-screen justify-start items-center text-slate-200 p-4 font-roboto">
       <div className="w-full max-w-4xl flex flex-col items-center">
-        <h1
-          className="text-4xl font-bold mt-4 mb-2 font-caveat select-none flex items-center"
-          style={{ WebkitAppRegion: "drag" }}
-        >
-          <i className="fa-solid fa-align-left text-3xl mr-4"></i>
-          Text Tuner
-        </h1>
-        <div className="mb-6 select-none text-sm">
-          Effortlessly correct and adjust the tone and style of your text with
-          just a click.
+        <div className="w-full text-center" style={{ WebkitAppRegion: "drag" }}>
+          <h1 className="text-4xl font-bold mt-4 mb-2 font-caveat select-none flex items-center justify-center">
+            <i className="fa-solid fa-align-left text-3xl mr-4"></i>
+            Text Tuner
+          </h1>
+          <div className="mb-6 select-none text-sm">
+            Effortlessly correct and adjust the tone and style of your text with
+            just a click.
+          </div>
         </div>
+
         <form
           className="w-full flex flex-col"
           onSubmit={(e) => e.preventDefault()}
