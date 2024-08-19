@@ -1,5 +1,7 @@
 # text-tuner
 
+![alt text](public/image.png)
+
 ## How to run the project locally
 
 1. Create a .env File in the root folder and add the following:
