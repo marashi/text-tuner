@@ -3,5 +3,4 @@ export const TextAction = {
   SHORTEN: "shorten",
   LENGTHEN: "lengthen",
   SIMPLIFY: "simplify",
-  NATURAL: "natural",
 };

@@ -1,8 +1,16 @@
-# React + Vite
+# text-tuner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## How to run the project locally
 
-Currently, two official plugins are available:
+1. Create a .env File in the root folder and add the following:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```javascript
+OPENAI_API_KEY = "your-secret-key";
+```
+
+2. Run the following commands:
+
+```bash
+npm install
+npm run start
+```
