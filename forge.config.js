@@ -32,6 +32,8 @@ export default {
           owner: "marashi",
           name: "text-tuner",
         },
+        prerelease: false,
+        draft: true,
       },
     },
   ],
