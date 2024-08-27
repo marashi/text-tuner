@@ -2,7 +2,7 @@
   "name": "text-tuner",
   "description": "TextTuner is an Electron app that uses OpenAI API to effortlessly correct and adjust the tone and style of your text with just a click.",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1-0",
   "type": "module",
   "main": "main.js",
   "license": "MIT",
