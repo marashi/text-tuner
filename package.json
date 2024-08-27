@@ -5,6 +5,7 @@
   "version": "0.0.0",
   "type": "module",
   "main": "main.js",
+  "license": "MIT",
   "scripts": {
     "electron": "electron .",
     "start": "electron-forge start",
