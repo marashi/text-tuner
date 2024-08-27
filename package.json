@@ -1,25 +1,40 @@
 {
   "name": "text-tuner",
+  "description": "TextTuner is an Electron app that uses OpenAI API to effortlessly correct and adjust the tone and style of your text with just a click.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "main": "main.js",
+  "license": "MIT",
   "scripts": {
     "electron": "electron .",
-    "start": "vite build && npm run electron",
+    "start": "electron-forge start",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "package": "electron-forge package",
+    "publish": "electron-forge publish",
+    "make": "electron-forge make"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
+    "electron-squirrel-startup": "^1.0.1",
     "framer-motion": "^11.3.28",
     "openai": "^4.56.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@electron-forge/cli": "^7.4.0",
+    "@electron-forge/maker-deb": "^7.4.0",
+    "@electron-forge/maker-rpm": "^7.4.0",
+    "@electron-forge/maker-squirrel": "^7.4.0",
+    "@electron-forge/maker-zip": "^7.4.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
+    "@electron-forge/plugin-fuses": "^7.4.0",
+    "@electron-forge/publisher-github": "^7.4.0",
+    "@electron/fuses": "^1.8.0",
     "@eslint/js": "^9.9.0",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -34,5 +49,43 @@
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "electron_publish_example"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ],
+      "publishers": [
+        {
+          "name": "@electron-forge/publisher-github",
+          "config": {
+            "repository": {
+              "owner": "marashi",
+              "name": "text-tuner"
+            }
+          }
+        }
+      ]
+    }
   }
 }
