@@ -4,6 +4,10 @@ on:
     types:
       - created
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   publish_on_linux:
     runs-on: ubuntu-latest
